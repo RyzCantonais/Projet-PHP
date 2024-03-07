@@ -1,0 +1,14 @@
+BackLogs :
+
+- Afficher les effets thérapeutiques et les effets secondaires
+- Interaction avec d'autres médicaments
+- S'inscrire à l'une des activités (conférence)
+- Mettre les mentions juridiques nécessaires, le droit des images et les vérifier
+
+
+Sprint :
+
+- Afficher les détails d'un médicaments et de tous les médicaments
+- Créer, modifier, supprimer un médicament
+- Créer, modifier, supprimer et s'inscrire, se désinscrire d'une activité
+- Mettre une page juridique
