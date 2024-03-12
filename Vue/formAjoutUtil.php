@@ -40,7 +40,7 @@
             background-color: rgba(255, 255, 255, 0.2); /* Légère couleur de fond lorsqu'un champ est focus */
             border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure légèrement plus visible */
             color: white;
-        }
+        } 
 
         .btn-primary {
             background-color: #007bff; /* Couleur bleue primaire pour le bouton */
