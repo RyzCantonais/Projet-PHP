@@ -34,7 +34,7 @@
             background-color: rgba(255, 255, 255, 0.1); /* Fond semi-transparent pour les champs de formulaire */
             border: 1px solid rgba(255, 255, 255, 0.1); /* Bordure semi-transparente */
             color: white; /* Texte en blanc pour contraste */
-        }
+        }  
 
         .form-control:focus {
             background-color: rgba(255, 255, 255, 0.2); /* Légère couleur de fond lorsqu'un champ est focus */
