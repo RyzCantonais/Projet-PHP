@@ -16,7 +16,7 @@
             }
         }
 
-        body {
+        body { try
             background: linear-gradient(to bottom right, #000000, #113a66); /* Fond en gradient noir à bleu foncé */
             color: white; /* Texte en blanc pour contraste */
         }
