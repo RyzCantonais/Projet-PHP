@@ -29,6 +29,7 @@
         .form-control:focus {
             background-color: rgba(255, 255, 255, 0.2); /* Légère couleur de fond lorsqu'un champ est focus */
             border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure légèrement plus visible */
+            color: white;
         }
 
         .btn-primary {
@@ -53,7 +54,7 @@
                     <div class="alert alert-danger"><?php echo $message; ?></div>
                 <?php endif; ?>
             
-            <form method="POST" action="Controleur/controleur.php?action=lg">
+            <form method="POST" action="index.php?action=LG">
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" class="form-control" id="username" name="username">
