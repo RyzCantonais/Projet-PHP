@@ -15,14 +15,14 @@ function loginUser($login, $password)
     // for now, just put the login in the session
     session_start();
     $_SESSION['login'] = $login;
-    require_once "vue/detailMedicaments.php";
+    require_once "vue/detailsMedicaments.php";
 }
 
 function logoutUser()
 {
     session_start();
     session_destroy();
-    require_once "vue/formLogin.php";
+    header("Location: index.php");
 }
 
 ?>
