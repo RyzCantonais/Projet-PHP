@@ -10,39 +10,11 @@
         .container {
             margin-top: 30px;
         }
-
-        footer {
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
     </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">
-        <img src="../images/logoGSB.png" alt="Logo GSB" style="height: 80px; width: auto; margin-right: 10px;">
-        Galaxy Swiss Bourdin
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#">À propos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-        </li>
-      </ul>
-      <div class="navbar-text text-right">
-        <a href="{{ url_for('index') }}" style="padding-right:10px; color: rgb(174, 159, 255);">Compte</a>
-        <a href="{{ url_for('logout') }}" style="padding-left:10px;">Se déconnecter</a>
-      </div>
-    </div>
-  </nav>
+<?php include "./components/header.component.html"; ?>
 
 <!-- Contenu de la page -->
 <div class="container" id="mentions-legales">
@@ -115,11 +87,7 @@
 </div>
 
 <!-- Pied de page Bootstrap -->
-<footer class="py-2 bg-dark text-white">
-    <div class="container text-center">
-        <p class="m-0">© 2024 Galaxy Swiss Bourdin</p>
-    </div>
-</footer>
+<?php include "./components/footer.component.html"; ?>
 
 <!-- Ajouter le lien vers Bootstrap JS et jQuery -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
