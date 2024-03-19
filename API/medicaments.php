@@ -8,7 +8,9 @@ switch ($request_method) {
     case 'GET':
         if (!empty($_GET["id"])) {
             $id = intval($_GET["id"]);
-            getMedicament($id); // Appel de la fonction getMedicament avec l'ID fourni
+            getMedicament($id);
+            effetT($id);
+            effetS($id);
         } else {
             getMedicaments();
         }
@@ -49,6 +51,11 @@ function getMedicament($id){
     $result->closeCursor();
     header('Content-Type: application/json');
     echo json_encode($response, JSON_PRETTY_PRINT);
+}
+
+function effetT($id){
+    global $conn;
+    $query = "SELECT "
 }
 
 ?>
