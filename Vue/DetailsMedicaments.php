@@ -10,11 +10,11 @@
 </head>
 
 <body class="bg-light">
-    <div class="container mt-5">
+<?php include "./Vue/components/header.component.html"; ?>
+    <div class="container mt-5" style="min-height: 100vh">
         <h1>Liste des médicaments de GSB</h1><br />
         <table class="table">
             <tbody>
-                <form method="post" action="index.php?action=DET">
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
@@ -33,21 +33,23 @@
                                         <?php echo $medoc["nom"]; ?>
                                     </td>
                                     <td>
+                                    <form method="post" action="index.php?action=DET">
                                         <input type="hidden" name="id_medicament" value="<?php echo $medoc["id"]; ?>">
                                         <button type="submit" name="details" value="Details"
                                             class="btn btn-primary">Détails</button>
+                                    </form>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
                     </table>
-                </form>
             </tbody>
         </table><br /><br />
 
         <!--<a href="index.php?action=FORM" class="btn btn-success">Ajouter un pilote</a><br><br>
         <a href="index.php?action=DET" class="btn btn-info">Voir le nombre</a>-->
     </div>
+    <?php include "./Vue/components/footer.component.html"; ?>
 </body>
 
 </html>
