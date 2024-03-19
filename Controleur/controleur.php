@@ -35,4 +35,24 @@ function logoutUser()
     header("Location: index.php");
 }
 
+
+function details(){
+    echo "ee";
+    if(isset($_POST['id_medicament'])) {
+        var_dump($_POST['id_medicament']);
+        $id_medicament = $_POST['id_medicament'];
+        try {
+            // Appel de la fonction pour récupérer les détails du médicament
+            $detail_json = file_get_contents('http://localhost/phpgroupe/api/medicaments.php?id=' . $id_medicament);
+            $details = json_decode($detail_json, true);
+       
+            // Affichage de la vue avec les détails du médicament
+            require_once "vue/descriptionMedoc.php";
+        } catch (Exception $e) {
+            echo 'Erreur : ' . $e->getMessage();
+        }
+    }
+}
+
+
 ?>
