@@ -3,7 +3,9 @@
 
 function displayMedocs()
 {
-    session_start();
+    if (!isset($_SESSION)) {
+        session_start();
+    }
     if (!isset($_SESSION['login'])) {
         require_once "vue/formLogin.php";
     } else {
@@ -21,7 +23,7 @@ function loginUser($login, $password)
         require_once "vue/formLogin.php";
     }
     else { $_SESSION['login'] = $login;
-        require_once "vue/detailsMedicaments.php";
+        displayMedocs();
     }
 }
    
