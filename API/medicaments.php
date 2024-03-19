@@ -1,6 +1,6 @@
 <?php
 
-include("db_connect.php");
+include("./db/db_connect.php");
 
 $request_method = $_SERVER["REQUEST_METHOD"];
 

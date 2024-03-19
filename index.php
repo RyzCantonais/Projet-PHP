@@ -10,7 +10,6 @@ if (empty($_GET["action"]))
 else
     if ($_GET["action"] == "LG")
     {
-        // get the login and password from the form and call the function loginUser
         $login = $_POST["username"];
         $password = $_POST["password"];
         loginUser($login, $password);

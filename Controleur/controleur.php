@@ -1,4 +1,6 @@
 <?php
+
+
 function displayMedocs()
 {
     session_start();
@@ -11,12 +13,16 @@ function displayMedocs()
 
 function loginUser($login, $password)
 {
-    // will check in the database with the api if it's the right login / password
-    // for now, just put the login in the session
     session_start();
-    $_SESSION['login'] = $login;
-    require_once "vue/detailsMedicaments.php";
+    if (!checkLogin($login, $password)) {
+        $_SESSION['message'] = "Login ou mot de passe incorrect";
+        require_once "vue/formLogin.php";
+    }
+    else { $_SESSION['login'] = $login;
+        require_once "vue/detailsMedicaments.php";
+    }
 }
+   
 
 function logoutUser()
 {
@@ -26,4 +32,3 @@ function logoutUser()
 }
 
 ?>
-*

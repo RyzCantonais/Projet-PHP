@@ -50,13 +50,14 @@
     <div class="card" style="width: 400px;">
         <div class="card-body">
             <h1 class="card-title text-center">Login</h1>
-                <?php if(isset($message)): ?>
-                    <div class="alert alert-danger"><?php echo $message; ?></div>
+                <?php if(isset($_SESSION['message'])): ?>
+                    <div class="alert alert-danger"><?php echo $_SESSION['message']; ?></div>
+                    <?php unset($_SESSION['message']); ?>
                 <?php endif; ?>
             
             <form method="POST" action="index.php?action=LG">
                 <div class="form-group">
-                    <label for="username">Username</label>
+                    <label for="username">Email</label>
                     <input type="text" class="form-control" id="username" name="username">
                 </div>
                 <div class="form-group">
