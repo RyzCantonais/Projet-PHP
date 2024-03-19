@@ -7,7 +7,9 @@ function displayMedocs()
     if (!isset($_SESSION['login'])) {
         require_once "vue/formLogin.php";
     } else {
-        require_once "Vue/detailsMedicaments.php";
+        $medicaments_json = file_get_contents('http://localhost/phpgroupe/api/medicaments.php');
+        $medicaments = json_decode($medicaments_json, true);
+        require_once "vue/detailsMedicaments.php";
     }
 }
 
