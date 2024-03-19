@@ -35,9 +35,7 @@ function logoutUser()
 
 
 function details(){
-    echo "ee";
     if(isset($_POST['id_medicament'])) {
-        var_dump($_POST['id_medicament']);
         $id_medicament = $_POST['id_medicament'];
         try {
             // Appel de la fonction pour récupérer les détails du médicament
