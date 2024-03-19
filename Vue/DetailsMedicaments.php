@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="vue/bootstrap.min.css" />
     <link rel="shortcut icon" href="./Vue/max.ico" type="image/x-icon">
     <title>Liste des médicaments de GSB</title>
 </head>
+
 <body class="bg-light">
     <div class="container mt-5">
         <h1>Liste des médicaments de GSB</h1><br />
@@ -19,15 +21,21 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($medicaments as $medoc): ?>
+                <?php foreach ( $medicaments as $medoc): ?>
                     <form method="post" action="index.php?action=MAJ">
-                        <input type="hidden" name="codeMedocAction" value="<?php echo $medoc["Code"]; ?>" />
-                        <tr>
-                            <td><?php echo $medoc["id"]; ?></td>
-                            <td><?php echo $medoc["nom"]; ?></td>
-                            <td><input type="submit" name="actionPil" value="Modifier" class="btn btn-primary" /></td>
-                            <td><input type="submit" name="actionPil" value="Supprimer" class="btn btn-danger" /></td>
-                        </tr>
+                        <!--<input type="hidden" name="codeMedocAction" value="<?php echo $medoc["id"]; ?>" />-->
+                        <<?php foreach ($medicaments as $medoc): ?>
+                            <tr>
+                                <td>
+                                    <?php echo $medoc["id"]; ?>
+                                </td>
+                                <td>
+                                    <?php echo $medoc["nom"]; ?>
+                                </td>
+                                <!-- Autres colonnes -->
+                                </tr>
+                        <?php endforeach; ?>
+
                     </form>
                 <?php endforeach; ?>
             </tbody>
@@ -37,4 +45,5 @@
         <a href="index.php?action=DET" class="btn btn-info">Voir le nombre</a>
     </div>
 </body>
+
 </html>

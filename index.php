@@ -19,8 +19,8 @@ else
         if ($_GET["action"] == "LO")
             logoutUser();
         else 
-            if ($_GET["action"] == "UPDT")
-                switchMedoc();
+            if ($_GET["action"] == "ALL")
+                consultMedocs();
             else
-                if ($_GET["action"] == "EDIT")
-                    editMedoc();
+                if ($_GET["action"] == "ONE")
+                    getOneMedoc();
