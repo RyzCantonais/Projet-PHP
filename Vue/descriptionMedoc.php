@@ -8,21 +8,25 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<?php include "./Vue/components/header.component.html"; ?>
+    <div style="min-height: 100vh">
+
+    
     <?php if (!empty($details)): ?>
         <table class="table">
             <tr>
                 <th>Description</th>
-                <!-- Ajouter d'autres colonnes si nécessaire -->
             </tr>
             <?php foreach ($details as $medicament): ?>
                 <tr>
                     <td><?php echo $medicament["description"]; ?></td>
-                    <!-- Ajouter d'autres cellules pour d'autres détails -->
                 </tr>
             <?php endforeach; ?>
         </table>
     <?php else: ?>
         <p>Aucun détail trouvé pour ce médicament.</p>
     <?php endif; ?>
+    </div>
+<?php include "./Vue/components/footer.component.html"; ?>
 </body>
 </html>
