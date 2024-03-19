@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="vue/bootstrap.min.css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="./Vue/max.ico" type="image/x-icon">
     <title>Liste des médicaments de GSB</title>
 </head>
@@ -12,35 +13,42 @@
     <div class="container mt-5">
         <h1>Liste des médicaments de GSB</h1><br />
         <table class="table">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Nom</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
             <tbody>
-                    <form method="post" action="index.php?action=MAJ">
-                        <!--<input type="hidden" name="codeMedocAction" value="<?php echo $medoc["id"]; ?>" />-->
-                        <?php foreach ($medicaments as $medoc): ?>
+                <form method="post" action="index.php?action=MAJ">
+                    <table class="table table-bordered table-striped">
+                        <thead>
                             <tr>
-                                <td>
-                                    <?php echo $medoc["id"]; ?>
-                                </td>
-                                <td>
-                                    <?php echo $medoc["nom"]; ?>
-                                </td>
-                                <!-- Autres colonnes -->
+                                <th>ID</th>
+                                <th>Nom</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($medicaments as $medoc): ?>
+                                <tr>
+                                    <td>
+                                        <?php echo $medoc["id"]; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $medoc["nom"]; ?>
+                                    </td>
+                                    <td>
+                                        <button type="submit" name="actionPil" value="Details"
+                                            class="btn btn-primary">Détails</button>
+                                        <button type="submit" name="actionPil" value="Effets"
+                                            class="btn btn-danger">Effets</button>
+                                    </td>
                                 </tr>
-                        <?php endforeach; ?>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </form>
 
-                    </form>
             </tbody>
         </table><br /><br />
 
-        <a href="index.php?action=FORM" class="btn btn-success">Ajouter un pilote</a><br><br>
-        <a href="index.php?action=DET" class="btn btn-info">Voir le nombre</a>
+        <!--<a href="index.php?action=FORM" class="btn btn-success">Ajouter un pilote</a><br><br>
+        <a href="index.php?action=DET" class="btn btn-info">Voir le nombre</a>-->
     </div>
 </body>
 
