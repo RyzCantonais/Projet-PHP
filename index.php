@@ -18,8 +18,8 @@ else
         if ($_GET["action"] == "LO")
             logoutUser();
         else 
-            if ($_GET["action"] == "UPDT")
-                switchMedoc();
+            if ($_GET["action"] == "DET")
+                details();
             else
                 if ($_GET["action"] == "EDIT")
                     editMedoc();

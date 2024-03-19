@@ -14,7 +14,7 @@
         <h1>Liste des médicaments de GSB</h1><br />
         <table class="table">
             <tbody>
-                <form method="post" action="index.php?action=MAJ">
+                <form method="post" action="index.php?action=DET">
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
@@ -33,17 +33,15 @@
                                         <?php echo $medoc["nom"]; ?>
                                     </td>
                                     <td>
-                                        <button type="submit" name="actionPil" value="Details"
+                                        <input type="hidden" name="id_medicament" value="<?php echo $medoc["id"]; ?>">
+                                        <button type="submit" name="details" value="Details"
                                             class="btn btn-primary">Détails</button>
-                                        <button type="submit" name="actionPil" value="Effets"
-                                            class="btn btn-danger">Effets</button>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
                     </table>
                 </form>
-
             </tbody>
         </table><br /><br />
 
