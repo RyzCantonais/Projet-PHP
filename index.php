@@ -18,8 +18,14 @@ else
         if ($_GET["action"] == "LO")
             logoutUser();
         else 
-            if ($_GET["action"] == "DET")
-                details();
+            if ($_GET["action"] == "DET"){
+               
+                if(isset($_POST['id_medicament'])) {
+                    $id_medicament = $_POST['id_medicament'];
+                  
+                details($id_medicament);
+                }
+            }
             else
                 if ($_GET["action"] == "EDIT")
                     editMedoc();

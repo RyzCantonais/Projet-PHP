@@ -36,18 +36,18 @@ function logoutUser()
 }
 
 
-function details(){
-    if(isset($_POST['id_medicament'])) {
-        $id_medicament = $_POST['id_medicament'];
+function details($id_medicament){
         try {
             $detail_json = file_get_contents('http://localhost/phpgroupe/api/medicaments.php?id=' . $id_medicament);
+            //var_dump( $detail_json);
+
+            $detail_json = str_replace("][",  ",",  $detail_json);
             $details = json_decode($detail_json, true);
+
             require_once "vue/descriptionMedoc.php";
         } catch (Exception $e) {
             echo 'Erreur : ' . $e->getMessage();
         }
     }
-}
-
 
 ?>
