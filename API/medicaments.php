@@ -11,6 +11,7 @@ switch ($request_method) {
             getMedicament($id);
             effetT($id);
             effetS($id);
+            incompatible($id);
         } else {
             getMedicaments();
         }
@@ -91,4 +92,21 @@ function effetS($id){
     echo json_encode($response, JSON_PRETTY_PRINT);
 }
 
+function incompatible($id){
+    global $conn;
+    $query = "SELECT medicaments.id, medicaments.nom as description FROM medicaments 
+            JOIN incompatibilité ON medicaments.id = incompatibilité.id
+            WHERE incompatibilité.id_1 =" . $id;
+    $response = array();
+
+    $conn->query("SET NAMES utf8");
+    $result = $conn->query($query);
+    while($row = $result->fetch()){
+        $response[] = $row;
+    }
+
+    $result->closeCursor();
+    header('Content-Type: application/json');
+    echo json_encode($response, JSON_PRETTY_PRINT);
+}
 ?>
