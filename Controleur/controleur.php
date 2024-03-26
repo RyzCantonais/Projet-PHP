@@ -63,7 +63,7 @@ function getUsers()
     require_once "vue/conference.php";
 }
 
-function getConferences()
+function Conferences()
 {
     $conferences_json = file_get_contents('http://localhost/phpgroupe/api/conferences.php');
     $conferences = json_decode($conferences_json, true);

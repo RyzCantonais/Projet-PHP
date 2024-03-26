@@ -29,3 +29,6 @@ else
             else
                 if ($_GET["action"] == "REJ")
                     RejoindreAct();
+                else
+                    if ($_GET["action"] == "CO")
+                        Conferences();
