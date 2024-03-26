@@ -52,8 +52,9 @@
                                         <br />
                                     </div>
                                     <form method="post" action="index.php?action=REJ">
-                                        <input type="hidden" name="id_user" value="<?php echo $act["id"]; ?>">
-                                        <button type="submit" name="details" value="Details"
+                                        <input type="hidden" name="id_user" value="<?php echo $user["id"]; ?>">
+                                        <input type="hidden" name ="id_act" value="<?php echo $act["id"]; ?>">
+                                        <button type="submit" name="rejoindre" value="Details"
                                             class="btn btn-primary">Rejoindre</button>
                                     </form>
                                 </td>

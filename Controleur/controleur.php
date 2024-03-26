@@ -60,5 +60,18 @@ function Conferences()
     $utilisateurs = json_decode($utilisateurs_json, true);
 
     require_once "vue/conference.php";
+} 
+
+function RejoindreAct(){
+    $data = array('id_user' => $_POST["id_user"], 'id_act' => $_POST["id_act"]);
+    $options = array('http' => array('header' => "Content-Type: application/x-www-form-urlencoded\r\n", 'method' => 'POST', 'content'=> http_build_query($data)));
+    $appel = file_get_contents('http://localhost/phpgroupe/api/conferences.php');
+
+    $context = stream_context_create($options);
+    $result = file_get_contents($appel, false, $context);
+    if($result === FALSE){}
+
+    var_dump($result);
+
 }
 ?>

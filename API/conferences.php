@@ -12,6 +12,9 @@ switch ($request_method) {
             getConferences();
         }
         break;
+    case 'POST':
+        inscriptAct();
+        break;
 }
 
 function getConferences(){
@@ -28,4 +31,21 @@ function getConferences(){
     $result->closeCursor();
     header('Content-Type: application/json');
     echo json_encode($response, JSON_PRETTY_PRINT);
+}
+
+function inscriptAct(){
+    global $conn;
+    $id_user = $_POST["id_user"];
+    $id_act = $_POST["id_act"];
+    $query = "INSERT INTO rejoint VALUES ($id_user, $id_act)";
+    $conn->query("SET NAMES utf8");
+
+    if($conn->query($query)){
+        $response = array('status' => 1, 'status_message' => 'Insertion reussis');
+    } else {
+        $response = array('status' => 0, 'status_message' => 'Erreur d insertion');
+    }
+    
+    header('Content-Type: application/json');
+    echo json_encode($response);
 }
