@@ -9,46 +9,54 @@
 </head>
 
 <body class="bg-light">
-<?php include "./Vue/components/header.component.html"; ?>
+    <?php include "./Vue/components/header.component.html"; ?>
     <div class="container mt-5" style="min-height: 100vh">
         <h1>Liste des Conférence</h1><br />
         <table class="table">
             <tbody>
-                    <table class="table table-bordered table-striped">
-                        <thead>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nom</th>
+                            <th>Description</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($activites as $act): ?>
                             <tr>
-                                <th>ID</th>
-                                <th>Nom</th>
-                                <th>Description</th>
-                                <th>Date</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($activites as $act): ?>
-                                <tr>
-                                    <td>
-                                        <?php echo $act["id"]; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $act["nom"]; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $act["description"]; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $act["date_activité"]; ?>
-                                    </td>
-                                    <td>
+                                <td>
+                                    <?php echo $act["id"]; ?>
+                                </td>
+                                <td>
+                                    <?php echo $act["nom"]; ?>
+                                </td>
+                                <td>
+                                    <?php echo $act["description"]; ?>
+                                </td>
+                                <td>
+                                    <?php echo $act["date_activité"]; ?>
+                                </td>
+                                <td>
+                                    <select name="user" id="user-select">
+                                        <option value="">Sélectionner un utilisateur</option>
+                                        <?php foreach ($utilisateurs as $user): ?>
+                                            <option value="<?php echo $user['id']; ?>">
+                                                <?php echo $user['nom']; ?>
+                                            </option>
+                                        <?php endforeach; ?>
+                                    </select>
                                     <form method="post" action="index.php?action=REJ">
                                         <input type="hidden" name="id_user" value="<?php echo $act["id"]; ?>">
                                         <button type="submit" name="details" value="Details"
                                             class="btn btn-primary">Rejoindre</button>
                                     </form>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
             </tbody>
         </table><br /><br />
 

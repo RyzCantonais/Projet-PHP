@@ -28,4 +28,4 @@ else
             }
             else
                 if ($_GET["action"] == "REJ")
-                    RejoindreAct($login);
+                    RejoindreAct();
