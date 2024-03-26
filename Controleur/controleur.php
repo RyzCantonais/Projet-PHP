@@ -50,4 +50,7 @@ function details($id_medicament){
         }
     }
 
+function RejoindreAct(){
+    
+}
 ?>
