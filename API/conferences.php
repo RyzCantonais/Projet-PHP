@@ -9,7 +9,7 @@ switch ($request_method) {
         if (!empty($_GET["id"])) {
             $id = intval($_GET["id"]);
         } else {
-            $conferences = getConferences();
+            getConferences();
         }
         break;
 }
@@ -27,5 +27,5 @@ function getConferences(){
 
     $result->closeCursor();
     header('Content-Type: application/json');
-    return json_encode($response, JSON_PRETTY_PRINT);
+    echo json_encode($response, JSON_PRETTY_PRINT);
 }

@@ -9,12 +9,12 @@ switch ($request_method) {
         if (!empty($_GET["id"])) {
             $id = intval($_GET["id"]);
         } else {
-            getMedicaments();
+            getUtilisateurs();
         }
         break;
 }
 
-function getMedicaments(){
+function getUtilisateurs(){
     global $conn;
     $query = "SELECT * FROM utilisateurs";
     $response = array();

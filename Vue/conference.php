@@ -39,14 +39,18 @@
                                     <?php echo $act["date_activité"]; ?>
                                 </td>
                                 <td>
-                                    <select name="user" id="user-select">
-                                        <option value="">Sélectionner un utilisateur</option>
-                                        <?php foreach ($utilisateurs as $user): ?>
-                                            <option value="<?php echo $user['id']; ?>">
-                                                <?php echo $user['nom']; ?>
-                                            </option>
-                                        <?php endforeach; ?>
-                                    </select>
+                                    <div class="form-group">
+                                        <select class="form-control" id="user-select">
+                                            <option value="">Choisir un utilisateur</option>
+                                            
+                                            <?php foreach ($utilisateurs as $user): ?>
+                                                <option value="<?php echo $user['id']; ?>">
+                                                    <?php echo $user['nom']; ?>
+                                                </option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                        <br />
+                                    </div>
                                     <form method="post" action="index.php?action=REJ">
                                         <input type="hidden" name="id_user" value="<?php echo $act["id"]; ?>">
                                         <button type="submit" name="details" value="Details"

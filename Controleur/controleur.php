@@ -51,22 +51,14 @@ function details($id_medicament)
     }
 }
 
-function RejoindreAct()
-{
-
-}
-
-function getUsers()
-{
-    $utilisateurs_json = file_get_contents('http://localhost/phpgroupe/api/utilisateurs.php');
-    $utilisateurs = json_decode($utilisateurs_json, true);
-    require_once "vue/conference.php";
-}
-
 function Conferences()
 {
     $conferences_json = file_get_contents('http://localhost/phpgroupe/api/conferences.php');
     $conferences = json_decode($conferences_json, true);
+
+    $utilisateurs_json = file_get_contents('http://localhost/phpgroupe/api/utilisateurs.php');
+    $utilisateurs = json_decode($utilisateurs_json, true);
+
     require_once "vue/conference.php";
 }
 ?>
