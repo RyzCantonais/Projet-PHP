@@ -40,10 +40,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group">
-                                        <select class="form-control" id="user-select">
+                                    <form method="post" action="index.php?action=REJ">
+                                        <select class="form-control" id="user-select" name="user-select">
                                             <option value="">Choisir un utilisateur</option>
                                             
-                                            <?php foreach ($utilisateurs as $user): ?>
+                                            <?php 
+                                    
+                                            foreach ($utilisateurs as $user): ?>
                                                 <option value="<?php echo $user['id']; ?>">
                                                     <?php echo $user['nom']; ?>
                                                 </option>
@@ -51,7 +54,7 @@
                                         </select>
                                         <br />
                                     </div>
-                                    <form method="post" action="index.php?action=REJ">
+
                                         <input type="hidden" name="id_user" value="<?php echo $user["id"]; ?>">
                                         <input type="hidden" name ="id_act" value="<?php echo $act["id"]; ?>">
                                         <button type="submit" name="rejoindre" value="Details"
