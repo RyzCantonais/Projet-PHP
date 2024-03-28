@@ -37,13 +37,11 @@ function inscriptAct(){
     global $conn;
     $id_user = $_POST["id_user"];
     $id_act = $_POST["id_act"];
-    var_dump($id_user);
-    var_dump($id_act);
     $query = "INSERT INTO rejoint VALUES ($id_user, $id_act)";
     $conn->query("SET NAMES utf8");
 
     if($conn->query($query)){
-        $response = array('status' => 1, 'status_message' => 'Insertion reussis');
+        $response = array('status' => 1, 'status_message' => 'Insertion reussis');     
     } else {
         $response = array('status' => 0, 'status_message' => 'Erreur d insertion');
     }
